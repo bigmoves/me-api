@@ -1,0 +1,16 @@
+FROM node:8.5
+MAINTAINER Chad Miller <chadtmiller15@gmail.com>
+
+RUN npm install --global nodemon
+
+RUN mkdir /app
+WORKDIR /app
+COPY package.json /app
+RUN npm install --production
+COPY . /app
+
+
+ENV PORT 9000
+EXPOSE $PORT
+
+CMD ["nodemon", "-L", "-e", "mjs", "index.js"]

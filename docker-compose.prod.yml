@@ -1,0 +1,8 @@
+version: '3'
+services:
+  node:
+    image: chadtmiller/me-api
+    ports:
+      - "80:9000"
+    environment:
+      NODE_ENV: 'production'

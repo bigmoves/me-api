@@ -1,0 +1,10 @@
+version: '3'
+services:
+  node:
+    links:
+      - mongo
+  mongo:
+    image: mongo:3
+    ports:
+      - "27017:27107"
+    command: --smallfiles
